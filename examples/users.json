@@ -1,13 +1,13 @@
 [
-	{
-		"username":"person1",
-		"email":"awesome@example.com",
-		"first_name":"Beau",
-		"last_name":"Collins",
-		"url":"http://awesomesauce.com",
-		"display_name":"Beau Danger Collins",
-		"nickname":"Beau",
-		"nicename":"beau",
-		"bio":"Nice guy"
-	}
+  {
+    "username":"person1",
+    "email":"awesome@example.com",
+    "first_name":"Beau",
+    "last_name":"Collins",
+    "url":"http://awesomesauce.com",
+    "display_name":"Beau Danger Collins",
+    "nickname":"Beau",
+    "nicename":"beau",
+    "bio":"Nice guy"
+  }
 ]
