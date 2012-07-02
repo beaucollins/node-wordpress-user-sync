@@ -60,7 +60,7 @@ Then require and run, provide the WP settings, a stream of JSON of users and a s
     
     http.get( url.parse('http://example.com/users.json'), function(res){
       sync.run( settings, res, function( error, users ){
-        if(e){
+        if(error){
           console.log(error);
         } else {
           console.log("All done");
