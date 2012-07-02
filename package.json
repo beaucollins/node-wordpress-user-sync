@@ -2,7 +2,7 @@
   "author": "Beau Collins <robert@automattic.com>",
   "name": "node-jquery-wordpress-user-sync",
   "description": "For syncing JSON feed of jQuery user accounts with jQuery MU install",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/wordpress-user-sync.js",
   "bin" : {
     "jquery-user-sync" : "./bin/jquery-user-sync"
