@@ -24,11 +24,13 @@ publicly. See [users.json][] for an example.
 
 Step 2) Run the jquery-user-sync command providing the necessary arguments:
 
-    jquery-user-sync JSON_URL --endpoint=http://site.wordpress.com/ --username=admin --password=123456
+    jquery-user-sync http://example.com/users.json --endpoint=http://site.wordpress.com/ \
+      --username=admin --password=123456
     
 Or you can pipe the users in too:
 
-    curl http://example.com/users.json | jquery-user-sync --endpoint=http://site.wordpress.com/ --username=admin --password=123456
+    curl http://example.com/users.json | jquery-user-sync --endpoint=http://site.wordpress.com/ \
+      --username=admin --password=123456
 
 Step 3) That's it
 
