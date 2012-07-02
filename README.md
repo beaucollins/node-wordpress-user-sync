@@ -53,3 +53,8 @@ Then require and run:
       username: 'admin',
       password: 'password'
     });
+    
+TODO:
+-----
+
+Add a way to provide a callback for when the syncing is done.
