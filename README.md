@@ -14,7 +14,7 @@ Or: http://core.trac.wordpress.org/ticket/18428
 Installation
 -----------------
 
-npm install git://github.com/beaucollins/node-jquery-user-sync.git
+    npm install git://github.com/beaucollins/node-jquery-user-sync.git -g
 
 Usage
 -----------------
@@ -24,7 +24,7 @@ publicly. See [users.json][] for an example.
 
 Step 2) Run the jquery-user-sync command providing the necessary arguments:
 
-    > jquery-user-sync JSON_URL --endpoint=http://site.wordpress.com/ --username=admin --password=123456
+    jquery-user-sync JSON_URL --endpoint=http://site.wordpress.com/ --username=admin --password=123456
 
 Step 3) That's it
 
