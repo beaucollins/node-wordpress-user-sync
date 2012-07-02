@@ -3,12 +3,21 @@
 var path = require('path'),
     fs = require('fs'),
     optparse = require('optparse'),
-    lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+    lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib'),
+    http = require('http'),
+    https = require('https'),
+    url = require('url');
 
+function run(settings, stream){
+  require(path.join(lib, 'wordpress-user-sync')).run(settings, stream, function(){
+    console.log("Completed!");
+    // console.log.apply(console, arguments);
+  });
+}
 
 try {
   
-  var settings = {};
+  var settings = {}, json_url;
   
   options = new optparse.OptionParser([
     ['-u', '--username USERNAME', 'WordPress account username for accessing the XML-RPC API'],
@@ -18,7 +27,7 @@ try {
   
   // URL referencing the USERS
   options.on(2, function(url){
-    settings.jquery_users_json_url = url;
+    json_url = url;
   });
   
   options.on('username', function(key, username){
@@ -35,7 +44,17 @@ try {
   
   options.parse(process.argv);
   
-  require(path.join(lib, 'wordpress-user-sync')).run(settings);
+  if (json_url) {
+    var u = url.parse(json_url), protocol = u.protocol == 'https' ? https : http;
+    console.log( "Fetching users from", json_url );
+    protocol.get( u, function( res ){
+      run( settings, res );
+    } );
+  } else {
+    console.log( "Reading users from STDIN" );
+    run( settings, process.stdin );
+  }
+  
   
 } catch (e) {
   process.stderr.write("Failed with error:\n");
