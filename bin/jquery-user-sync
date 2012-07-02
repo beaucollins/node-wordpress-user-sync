@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+    fs = require('fs'),
+    optparse = require('optparse'),
+    lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+
+
+try {
+  
+  var settings = {};
+  
+  options = new optparse.OptionParser([
+    ['-u', '--username USERNAME', 'WordPress account username for accessing the XML-RPC API'],
+    ['-p', '--password PASSWORD', 'WordPress account password for accessing the XML-RPC API'],
+    ['-e', '--endpoint ENDPOINT', 'URL for WordPress XML-RPC endpoint']
+  ]);
+  
+  // URL referencing the USERS
+  options.on(2, function(url){
+    settings.jquery_users_json_url = url;
+  });
+  
+  options.on('username', function(key, username){
+    settings.username = username;
+  });
+  
+  options.on('password', function(key, password){
+    settings.password = password;
+  });
+  
+  options.on('endpoint', function(key, endpoint){
+    settings.wordpress_api_url = endpoint;
+  });
+  
+  options.parse(process.argv);
+  
+  require(path.join(lib, 'wordpress-user-sync')).run(settings);
+  
+} catch (e) {
+  process.stderr.write("Failed with error:\n");
+  process.stderr.write("\t" + e + "\n");
+  process.exit(1);
+}
