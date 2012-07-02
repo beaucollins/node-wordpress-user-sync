@@ -35,6 +35,16 @@ Using from within node
 
 If you don't want to use the command line, you can also run from within node.
 
+Update your <code>package.json</code>:
+  
+    ...
+    "dependencies": {
+        "wordpress-user-sync": "git://github.com/beaucollins/node-jquery-user-sync.git"
+    },
+    ...
+
+Then require and run:
+
     var sync = require('wordpress-user-sync');
   
     sync.run({
