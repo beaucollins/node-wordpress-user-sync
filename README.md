@@ -28,4 +28,4 @@ Step 2) Run the jquery-user-sync command providing the necessary arguments:
 
 Step 3) That's it
 
-[users.json]: http://github.com/beaucollins/node-jquery-user-sync/master/examples/users.json
+[users.json]: https://github.com/beaucollins/node-jquery-user-sync/blob/master/examples/users.json "Example JSON file for user accounts"
