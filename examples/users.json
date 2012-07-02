@@ -1,7 +1,6 @@
 [
 	{
 		"username":"person1",
-		"password":"awesomepass",
 		"email":"awesome@example.com",
 		"first_name":"Beau",
 		"last_name":"Collins",
