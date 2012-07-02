@@ -29,3 +29,17 @@ Step 2) Run the jquery-user-sync command providing the necessary arguments:
 Step 3) That's it
 
 [users.json]: https://github.com/beaucollins/node-jquery-user-sync/blob/master/examples/users.json "Example JSON file for user accounts"
+
+Using from within node
+-------------------------------------
+
+If you don't want to use the command line, you can also run from within node.
+
+    var sync = require('wordpress-user-sync');
+  
+    sync.run({
+      wordpress_api_url: 'http://blog.com/',
+      jquery_users_json_url: 'http://example.com/somejson.json',
+      username: 'admin',
+      password: 'password'
+    });
