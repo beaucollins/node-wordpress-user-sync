@@ -8,8 +8,8 @@
     "jquery-user-sync" : "./bin/jquery-user-sync"
   },
   "dependencies": {
-    "node-wordpress":"git://github.com/beaucollins/node-wordpress.git#user-methods",
-    "optparse":"*"
+    "wordpress":"0.1.2",
+    "optparse":"~1.0"
   },
   "devDependencies": {},
   "optionalDependencies": {},
